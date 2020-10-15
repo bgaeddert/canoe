@@ -1,4 +1,4 @@
-##Canoe Final Project
+## Canoe Final Project
 
 This uses https://hub.docker.com/r/bitnami/laravel docker image with maria db.
 
@@ -8,7 +8,7 @@ I believe this meets the requirement of the pdf only in it's strictest since. I'
 
 I followed this formula provided in the pdf _amount * (1+5%) * (1+10%)_ where every cash flow added is cumulative.
 
-##Install
+## Install
 
 - Clone this repo 
 - docker-compose up
