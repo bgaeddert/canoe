@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="page-header"><h1>{{$ctrl.client.name}}</h1></div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Fund Name</th>
+            <th>Type</th>
+            <th>Inception Date</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="fund in $ctrl.funds">
+                <td>{{fund.name}}</td>
+                <td>{{fund.type}}</td>
+                <td>{{fund.inception_date}}</td>
+                <td>{{fund.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

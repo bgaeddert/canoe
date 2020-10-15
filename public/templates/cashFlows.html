@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="client-name">Client Name</label>
+            <select id="client-name" class="form-control"
+                    ng-options="client as client.name for client in $ctrl.clients track by client.id"
+                    ng-model="$ctrl.selectedClient"
+                    ng-change="$ctrl.onClientChange()"
+            ></select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="fund-type">Investment Type</label>
+            <select id="fund-type" class="form-control"
+                    ng-options="type as type for type in $ctrl.selectedClient.permission"
+                    ng-model="$ctrl.selectedType"
+                    ng-change="$ctrl.onTypeChange()"
+            ></select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="investment-name">Investment Name</label>
+            <select id="investment-name" class="form-control"
+                    ng-options="investment as investment.name for investment in $ctrl.investments track by investment.id"
+                    ng-model="$ctrl.selectedInvestment"
+                    ng-change="$ctrl.onInvestmentChange()"
+            ></select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="current-value">Current Value:</label>
+            <input type="text" class="form-control" id="current-value" value="{{$ctrl.currentValue | currency : $ : 2}}"
+                   readonly>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="updated-value">Updated Value:</label>
+            <input type="text" class="form-control" id="updated-value" value="{{$ctrl.updatedValue | currency : $ : 2}}"
+                   readonly>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5">
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" class="form-control" id="date" ng-model="$ctrl.date">
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="form-group">
+            <label for="return-value">Value:</label>
+            <input type="number" class="form-control" id="return-value" ng-model="$ctrl.returnValue">
+        </div>
+    </div>
+    <div class="col-md-2 text-right">
+        <button style="margin-top: 25px;" type="button" class="btn btn-default"
+                ng-disabled="!$ctrl.selectedInvestment || !$ctrl.returnValue"
+                ng-click="$ctrl.calcUpdatedValue()">Calculate</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <button type="button" class="btn btn-default">Cancel</button>
+    </div>
+    <div class="col-md-6 text-right">
+        <button type="button" class="btn btn-default" ng-click="$ctrl.storeCashFlow()">Submit</button>
+    </div>
+</div>
