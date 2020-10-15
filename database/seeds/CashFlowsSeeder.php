@@ -42,6 +42,16 @@ class CashFlowsSeeder extends \Illuminate\Database\Seeder
                 'date' => '2017-02-01',
                 'return' => 0.05
             ],
+            [
+                'investment_id' => 8,
+                'date' => '2017-02-01',
+                'return' => 0.05
+            ],
+            [
+                'investment_id' => 9,
+                'date' => '2017-02-01',
+                'return' => 0.05
+            ],
         ];
 
         DB::table('cash_flows')->insert($cashFlows);

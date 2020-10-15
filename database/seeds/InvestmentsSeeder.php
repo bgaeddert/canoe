@@ -59,6 +59,22 @@ class InvestmentsSeeder extends \Illuminate\Database\Seeder
                 'date' => '2017-01-01',
                 'amount' => 1000000
             ],
+
+            [
+                'name' => 'C1RE1 investment',
+                'client_id' => 1,
+                'fund_id' => 10,
+                'date' => '2017-01-01',
+                'amount' => 1000000
+            ],
+
+            [
+                'name' => 'C1PC1 investment',
+                'client_id' => 1,
+                'fund_id' => 13,
+                'date' => '2017-01-01',
+                'amount' => 1000000
+            ],
         ];
 
         DB::table('investments')->insert($investments);
